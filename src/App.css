@@ -1,38 +1,211 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todoHeader{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction:column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 150px;
+  background-color: #e9eef6 ;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.todoHeader h3 {
+  font-size: 25px;
+  margin: 20px auto 15px auto;
+}
+
+.todoHeader button {
+  font-size: 16px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todoHeader button:hover{
+  box-shadow: 0 0 5px #007bff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error {
+  border: 1px solid #ff4444;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.taskForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ReactModalPortal h2 {
+  font-size: 20px;
+  margin: 15px 5px
+}
+.taskForm input {
+  margin-bottom: 5px;
+  height: 25px;
+  font-size: medium;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
+.taskForm textarea {
+  font-size: large;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  height: 85px;
+  margin-bottom: 10px;
+}
+
+.ReactModalPortal button {
+  font-size: 16px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+
+.submit {
+  color: #28a745;
+  border: 1px solid #28a745;
+  margin-right: 10px;
+}
+.submit:hover{
+  box-shadow: 0 0 5px #28a745;
+}
+.close {
+  color: #d21f1f;
+  border: 1px solid #d21f1f;
+  margin-top: 10px;
+}
+
+.close:hover{
+  box-shadow: 0 0 5px #d21f1f;
+}
+
+
+.taskContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.taskCard {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.09);
+  box-sizing: border-box;
+}
+
+
+
+.taskText{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1; 
+}
+
+.taskButton{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto; 
+
+}
+
+.taskText div {
+  max-height: 100px; 
+  overflow-y: auto;  
+  padding-right: 8px; 
+  
+}
+.taskText h3{
+  color: #0b132a;
+  font-size: 20px;
+  margin: 0px;
+}
+
+.taskText p{
+  color: #0b132a;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap; 
+  margin: 0;
+  line-height: 1.4;
+  padding: 4px 0;
+  
+}
+
+
+.svgButton{
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.edit {
+  background-image: url(/public/edit_modify_icon-icons.com_72390.svg);
+  background-size: 27px 27px;
+  margin-right: 7px;
+}
+.delete{
+  background-image: url(/public/trash_bin_icon-icons.com_67981.svg);
+}
+.editMode {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.editInput {
+  padding: 2px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.editTextarea {
+  padding: 0px 0px 0px 0px;
+  font-family: inherit;
+  min-height: 60px;
+  max-height: 94px;
+  height: 100px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; 
+  overflow-y: auto;
+  font-size: 16px;
+  box-sizing: border-box; 
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.svgButton.save {
+  background-image: url(/public/vcsnormal_93488.svg);
 }
